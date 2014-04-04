@@ -10,14 +10,15 @@ var server = http.createServer(app);
 server.listen(port);
 
 console.log('http server listening on %d', port);
-var result  = {
-	date: new Date(),
-	pie: "apple pie is good"
-}
+
 
 var wss = new WebSocketServer({server: server});
 console.log('websocket server created');
 wss.on('connection', function(ws) {
+		var result  = {
+		date: new Date(),
+		pie: "apple pie is good"
+	}
     var id = setInterval(function() {
         ws.send(JSON.stringify(result), function() {  });
     }, 1000);
