@@ -2,7 +2,7 @@
   // Initialize the socket & handlers
   var connectToServer = function() {
     var warbleSocket = new SockJS('https://glacial-castle-5433.herokuapp.com');
-
+    console.log("i got one")
     warbleSocket.onopen = function() {
       clearInterval(connectRetry);
       $('.connect-status')

@@ -62,4 +62,5 @@ var server = http.createServer();
 //warble.installHandlers(server, {prefix:'/warble'});
 //warble.installHandlers(server, {prefix:''});
 warble.installHandlers(server);
+console.log("port is "+port)
 server.listen(port);
