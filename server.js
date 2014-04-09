@@ -59,5 +59,5 @@ warble.on('connection', function(conn) {
 });
 
 var server = http.createServer();
-warble.installHandlers(server, {prefix:'/warble'});
+//warble.installHandlers(server, {prefix:'/warble'});
 server.listen(port);
