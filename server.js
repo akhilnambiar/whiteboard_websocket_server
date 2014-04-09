@@ -1,4 +1,4 @@
-/*
+
 var WebSocketServer = require('ws').Server
   , http = require('http')
   , express = require('express')
@@ -31,11 +31,11 @@ wss.on('connection', function(ws) {
         clearInterval(id);
     });
 });
-*/
+
 
 
 //USING SOCK JS
-
+/*
 var http = require('http'),
     sockjs = require('sockjs'),
     warble = sockjs.createServer(),
@@ -64,3 +64,4 @@ var server = http.createServer();
 warble.installHandlers(server);
 console.log("port is "+port)
 server.listen(port);
+*/
