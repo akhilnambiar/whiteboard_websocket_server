@@ -25,6 +25,9 @@ wss.on('connection', function(ws) {
     }, 1000);
 
     console.log('websocket connection open');
+    ws.on('message', function(data,flags) {
+        console.log('received: %s', data);
+    });
 
     ws.on('close', function() {
         console.log('websocket connection close');
