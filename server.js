@@ -26,7 +26,10 @@ wss.on('connection', function(ws) {
 
     console.log('websocket connection open');
     ws.on('message', function(data,flags) {
-        ws.send(data);
+        var result2  = {
+        text: data,
+        }
+        ws.send(JSON.stringify(result2));
         console.log('received: %s', data);
     });
 
