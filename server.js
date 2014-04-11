@@ -34,6 +34,11 @@ wss.on('connection', function(ws) {
         console.log('websocket connection close');
         clearInterval(id);
     });
+
+    wss.broadcast = function(data) {
+    for(var i in this.clients)
+        this.clients[i].send(data);
+    };
 });
 
 
