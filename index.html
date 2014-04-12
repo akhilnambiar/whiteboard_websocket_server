@@ -1,6 +1,7 @@
 
 <html>
   <head>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <style>
       body {
         font-family: "Helvetica Neue", helvetica, arial;
@@ -25,8 +26,8 @@
         var li = document.createElement('li');
         li.innerHTML = JSON.parse(event.data);
         li.innerHTML = event.data
-        $('#warble-msg').text(event.data);
         document.querySelector('#pings').appendChild(li);
+        document.getElementById('myLayer').innerHTML =li.innerHTML;
       };
     </script>
   </head>
