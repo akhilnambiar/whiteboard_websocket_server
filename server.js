@@ -17,8 +17,7 @@ var wss = new WebSocketServer({server: server});
 wss.broadcast = function(data) {
     for(var i in this.clients)
         this.clients[i].send(data);
-    };
-});
+};
 console.log('websocket server created');
 wss.on('connection', function(ws) {
 		var result  = {
@@ -45,6 +44,7 @@ wss.on('connection', function(ws) {
     });
 
     
+});
 
 
 
