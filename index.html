@@ -25,6 +25,7 @@
         var li = document.createElement('li');
         //li.innerHTML = JSON.parse(event.data);
         li.innerHTML = event.data
+        $('#warble-msg').text(event.data);
         document.querySelector('#pings').appendChild(li);
       };
     </script>
@@ -32,6 +33,7 @@
   <body>
     <h1>Pings</h1>
     <ul id='pings'></ul>
+    <h3 id="warble-msg"></h3>
   </body>
 </html>
 <!--
