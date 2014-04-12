@@ -23,10 +23,10 @@
       var ws = new WebSocket(host);
       ws.onmessage = function (event) {
         var li = document.createElement('li');
-        //li.innerHTML = JSON.parse(event.data);
+        li.innerHTML = JSON.parse(event.data);
         li.innerHTML = event.data
         $('#warble-msg').text(event.data);
-        document.querySelector('#pings').appendChild(li);
+        //document.querySelector('#pings').appendChild(li);
       };
     </script>
   </head>
