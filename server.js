@@ -31,7 +31,7 @@ wss.on('connection', function(ws) {
 */
 
     console.log('websocket connection open');
-    /*
+    
     ws.on('message', function(data,flags) {
         var result2  = {
         text: data,
@@ -45,7 +45,7 @@ wss.on('connection', function(ws) {
         console.log('websocket connection close');
         //clearInterval(id);
     });
-*/
+
 
     
 });
