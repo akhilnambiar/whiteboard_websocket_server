@@ -41,7 +41,9 @@ wss.on('connection', function(ws) {
         //ws.send(JSON.stringify(result2));
         //console.log('received: %s', data);
         console.log('type of data: %s',data.type);
-        singleData = data;
+        if (data!=null){
+          singleData = data;
+        }
         wss.broadcast(data);
     });
 
