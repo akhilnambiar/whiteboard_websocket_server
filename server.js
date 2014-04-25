@@ -25,10 +25,11 @@ wss.on('connection', function(ws) {
 		pie: "apple pie is good"
 	}
     //WARNING COMMENT THE BELOW ITEM OUT
+    /*
     var id = setInterval(function() {
         ws.send(JSON.stringify({ date: new Date(), pie: "apple pie is good"}), function() {  });
     }, 1000);
-
+    */
 
     console.log('websocket connection open');
     
