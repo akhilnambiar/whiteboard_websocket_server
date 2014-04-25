@@ -5,6 +5,9 @@ var WebSocketServer = require('ws').Server
   , app = express()
   , port = process.env.PORT || 5000;
 
+var sockjs = require('sockjs');
+var SockServerInstance = sockjs.createServer();
+
 app.use(express.static(__dirname + '/'));
 
 var server = http.createServer(app);
@@ -20,6 +23,7 @@ wss.broadcast = function(data) {
         this.clients[i].send(data);
 };
 console.log('websocket server created');
+
 wss.on('connection', function(ws) {
 		var result  = {
 		date: new Date(),
@@ -50,6 +54,9 @@ wss.on('connection', function(ws) {
     ws.on('close', function() {
         console.log('websocket connection close');
         //clearInterval(id);
+    });
+    ws.on('error', function(reason, code) {
+      console.log('socket error: reason ' + reason + ', code ' + code);
     });
 app.get('/paint', function(req, res) {
     /*
