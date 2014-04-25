@@ -68,7 +68,7 @@ app.get('/paint', function(req, res) {
     //res.write(singleData);
     //res.end('</body></html>');
     res.end(singleData);
-    wss.broadcast(singleData);
+    //wss.broadcast(singleData);
 });
 
     
