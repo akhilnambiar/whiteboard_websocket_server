@@ -50,6 +50,7 @@ wss.on('connection', function(ws) {
         //clearInterval(id);
     });
 app.get('/paint', function(req, res) {
+    /*
     new_son = {
     recipe_id : recArray, 
     recipe_name: recnameArray, 
@@ -57,6 +58,7 @@ app.get('/paint', function(req, res) {
     details: dArray,
     ingredient_list: ilArray
     };
+    */
     var format_son = JSON.stringify(new_son);
     //res.write(format_son);
     res.writeHead(200);
