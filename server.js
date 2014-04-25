@@ -29,7 +29,7 @@ wss.on('connection', function(ws) {
 		date: new Date(),
 		pie: "apple pie is good"
 	}
-
+  
     //WARNING COMMENT THE BELOW ITEM OUT
     /*
     var id = setInterval(function() {
@@ -37,67 +37,49 @@ wss.on('connection', function(ws) {
     }, 1000);
     */
 
+    console.log('websocket connection open');
     
-    app.get('/', function(req, res) {
-      /*
-      new_son = {
-      recipe_id : recArray, 
-      recipe_name: recnameArray, 
-      smallImageUrls:siuArray, 
-      details: dArray,
-      ingredient_list: ilArray
-      };
-      
-      var format_son = JSON.stringify(new_son);
-      res.write(format_son);
-      */
-      res.writeHead(200);
-      console.log('websocket connection open');
-    
-      ws.on('message', function(data,flags) {
-          var result2  = {
-          text: data,
-          }
-          //ws.send(JSON.stringify(result2));
-          //console.log('received: %s', data);
-          console.log('type of data: %s',data.type);
-          if (data!=null){
-            singleData = data;
-          }
-          wss.broadcast(data);
-      });
+    ws.on('message', function(data,flags) {
+        var result2  = {
+        text: data,
+        }
+        //ws.send(JSON.stringify(result2));
+        //console.log('received: %s', data);
+        console.log('type of data: %s',data.type);
+        if (data!=null){
+          singleData = data;
+        }
+        wss.broadcast(data);
+    });
 
-      ws.on('close', function() {
-          console.log('websocket connection close');
-          //clearInterval(id);
-      });
-      ws.on('error', function(reason, code) {
-        console.log('socket error: reason ' + reason + ', code ' + code);
-      });
-      res.end(singleData);
-      //wss.broadcast(singleData);
+    ws.on('close', function() {
+        console.log('websocket connection close');
+        //clearInterval(id);
     });
-    app.get('/paint', function(req, res) {
-        /*
-        new_son = {
-        recipe_id : recArray, 
-        recipe_name: recnameArray, 
-        smallImageUrls:siuArray, 
-        details: dArray,
-        ingredient_list: ilArray
-        };
-        
-        var format_son = JSON.stringify(new_son);
-        res.write(format_son);
-        */
-        res.writeHead(200);
-        //res.write('<html><body>');
-        //res.write('THE NEW RESPONSE PAGE');
-        //res.write(singleData);
-        //res.end('</body></html>');
-        res.end(singleData);
-        //wss.broadcast(singleData);
+    ws.on('error', function(reason, code) {
+      console.log('socket error: reason ' + reason + ', code ' + code);
     });
+app.get('/paint', function(req, res) {
+    /*
+    new_son = {
+    recipe_id : recArray, 
+    recipe_name: recnameArray, 
+    smallImageUrls:siuArray, 
+    details: dArray,
+    ingredient_list: ilArray
+    };
+    
+    var format_son = JSON.stringify(new_son);
+    res.write(format_son);
+    */
+    res.writeHead(200);
+    //res.write('<html><body>');
+    //res.write('THE NEW RESPONSE PAGE');
+    //res.write(singleData);
+    //res.end('</body></html>');
+    res.end(singleData);
+    //wss.broadcast(singleData);
+});
 
     
 });
