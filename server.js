@@ -53,6 +53,7 @@ app.get('/paint', function(req, res) {
     res.writeHead(200);
     res.write('<html><body>');
     res.write('THE NEW RESPONSE PAGE');
+    res.write(singleData);
     res.end('</body></html>');
     wss.broadcast(singleData);
 });
