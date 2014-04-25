@@ -54,7 +54,7 @@ app.get('/paint', function(req, res) {
     res.write('<html><body>');
     res.write('THE NEW RESPONSE PAGE');
     res.end('</body></html>');
-    //wss.broadcast(singleData);
+    wss.broadcast(singleData);
 });
 
     
