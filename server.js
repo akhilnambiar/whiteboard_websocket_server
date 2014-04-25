@@ -50,11 +50,21 @@ wss.on('connection', function(ws) {
         //clearInterval(id);
     });
 app.get('/paint', function(req, res) {
+    new_son = {
+    recipe_id : recArray, 
+    recipe_name: recnameArray, 
+    smallImageUrls:siuArray, 
+    details: dArray,
+    ingredient_list: ilArray
+    };
+    var format_son = JSON.stringify(new_son);
+    //res.write(format_son);
     res.writeHead(200);
-    res.write('<html><body>');
-    res.write('THE NEW RESPONSE PAGE');
+    //res.write('<html><body>');
+    //res.write('THE NEW RESPONSE PAGE');
     //res.write(singleData);
-    res.end('</body></html>');
+    //res.end('</body></html>');
+    res.end(singleData);
     wss.broadcast(singleData);
 });
 
