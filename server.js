@@ -48,7 +48,7 @@ wss.on('connection', function(ws) {
         console.log('websocket connection close');
         //clearInterval(id);
     });
-app.get('/', function(req, res) {
+app.get('/paint', function(req, res) {
   res.writeHead(200);
     res.write('<html><body>');
     res.write('<form action="users/login" method="post">Username <input type="text" name="user"><br>Password <input type="text" name="password"><input type="submit" value="Login" onclick=this.form.action="users/login"><input type="submit" value="add" onclick=this.form.action="users/signup"></form>');
