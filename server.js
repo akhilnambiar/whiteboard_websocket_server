@@ -24,11 +24,11 @@ wss.on('connection', function(ws) {
 		date: new Date(),
 		pie: "apple pie is good"
 	}
-    /*
+    WARNING COMMENT THE BELOW ITEM OUT
     var id = setInterval(function() {
         ws.send(JSON.stringify({ date: new Date(), pie: "apple pie is good"}), function() {  });
     }, 1000);
-*/
+
 
     console.log('websocket connection open');
     
@@ -37,7 +37,8 @@ wss.on('connection', function(ws) {
         text: data,
         }
         //ws.send(JSON.stringify(result2));
-        console.log('received: %s', data);
+        //console.log('received: %s', data);
+        console.log('type of data: %s',data.type);
         wss.broadcast(data);
     });
 
