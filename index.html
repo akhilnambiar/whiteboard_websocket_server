@@ -86,18 +86,21 @@
         return chars.join('');
         }
         var decoded = utf8Decode(event.data);
+
+        /*
         var reader = new window.FileReader();
         reader.readAsDataURL(decoded); 
         reader.onloadend = function() {
           base64data = reader.result;                
           console.log(base64data );
         }
+        */
 
 
         var image = new Image();
-        var a = base64data.replace(/data:/g,"data:image/png");
+        //var a = base64data.replace(/data:/g,"data:image/png");
         image.src = a;
-        document.body.appendChild(image);
+        document.body.appendChild(decoded);
 
 
         //TRYING SOME STUFF OUT
