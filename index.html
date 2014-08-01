@@ -58,17 +58,18 @@
         li.innerHTML = event.data
         //document.querySelector('#pings').appendChild(li);
         document.getElementById('warble-msg').innerHTML = event.data;
-        
+        /*
+        OLD
         var reader = new window.FileReader();
         reader.readAsText(event.data); 
         reader.onloadend = function() {
           base64data = reader.result;                
           console.log(base64data);
         }
-
-        var arrayBuffer = msg.data;
+        */
+        
+        var arrayBuffer = event.data;
         var bytes = new Uint8Array(arrayBuffer);
-
         var image = document.getElementById('image');
         image.src = 'data:image/png;base64,'+encode(bytes);
 
