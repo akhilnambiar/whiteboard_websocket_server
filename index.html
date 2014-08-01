@@ -96,7 +96,7 @@
         reader.readAsText(event.data); 
         reader.onloadend = function() {
           base64data = reader.result;                
-          console.log(base64data );
+          console.log(base64data);
         }
 
         /*
@@ -123,6 +123,7 @@
         console.log(base64data);
         image.src = base64data;
         document.body.appendChild(image);
+        document.body.appendChild(base64data);
 
 
 
