@@ -62,7 +62,7 @@
         
         
         
-
+          /*
         function utf8Decode(bytes) {
           console.log("CALLED IT");
         var chars = [], offset = 0, length = bytes.length, c, c2, c3;
@@ -83,25 +83,25 @@
             offset += 3;
           }
         }
+        */
 
         return chars.join('');
         }
         var decoded = utf8Decode(event.data);
 
-        /*
+        
         var reader = new window.FileReader();
-        reader.readAsDataURL(decoded); 
+        reader.readAsText(event.data); 
         reader.onloadend = function() {
           base64data = reader.result;                
           console.log(base64data );
         }
-        */
 
 
         var image = new Image();
         //var a = base64data.replace(/data:/g,"data:image/png");
-        console.log(decoded);
-        image.src = decoded;
+        console.log(base64data);
+        image.src = base64data;
         document.body.appendChild(image);
 
 
