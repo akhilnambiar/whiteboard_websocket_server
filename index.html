@@ -19,13 +19,16 @@
     </style>
 
     <script>
+    /*
       function hexToBase64(str) {
         return btoa(String.fromCharCode.apply(null, str.replace(/\r|\n/g, "").replace(/([\da-fA-F]{2}) ?/g, "0x$1 ").replace(/ +$/, "").split(" ")));
       }
+    */
       var host = location.origin.replace(/^http/, 'ws')
       var ws = new WebSocket(host);
       ws.onmessage = function (event) {
         console.log("WORKING");
+        console.log(event.data.type);
         var li = document.createElement('li');
         //li.innerHTML = JSON.parse(event.data);
         li.innerHTML = event.data
