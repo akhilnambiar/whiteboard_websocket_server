@@ -57,6 +57,13 @@
         //document.querySelector('#pings').appendChild(li);
         document.getElementById('warble-msg').innerHTML = event.data;
 
+        var reader = new window.FileReader();
+        reader.readAsDataURL(event.data); 
+        reader.onloadend = function() {
+          base64data = reader.result;                
+          console.log(base64data );
+        }
+
 
         //TRYING SOME STUFF OUT
         var arrayBuffer = event.data;
