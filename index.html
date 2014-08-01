@@ -23,6 +23,8 @@
       var ws = new WebSocket(host);
       ws.onmessage = function (event) {
         console.log("YEA");
+        console.log(event.data.type);
+        console.log(event.data.size)
         var li = document.createElement('li');
         //li.innerHTML = JSON.parse(event.data);
         li.innerHTML = event.data
