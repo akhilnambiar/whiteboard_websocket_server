@@ -19,6 +19,9 @@
     </style>
 
     <script>
+      function hexToBase64(str) {
+        return btoa(String.fromCharCode.apply(null, str.replace(/\r|\n/g, "").replace(/([\da-fA-F]{2}) ?/g, "0x$1 ").replace(/ +$/, "").split(" ")));
+      }
       var host = location.origin.replace(/^http/, 'ws')
       var ws = new WebSocket(host);
       ws.onmessage = function (event) {
@@ -27,7 +30,7 @@
         //li.innerHTML = JSON.parse(event.data);
         li.innerHTML = event.data
         //document.querySelector('#pings').appendChild(li);
-        img.src = 'data:image/jpeg;base64,' + btoa(event.data);
+        img.src = 'data:image/jpeg;base64,' + hexToBase64(event.data);
         document.getElementById('warble-msg').innerHTML = img;
         document.body.appendChild(img);
       };
