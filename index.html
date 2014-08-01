@@ -64,8 +64,8 @@
           console.log(base64data );
         }
         var image = new Image();
-        a = a.replace(/data:/g,"data:image/png");
-        image.src = base64data;
+        a = base64data.replace(/data:/g,"data:image/png");
+        image.src = a;
         document.body.appendChild(image);
 
 
