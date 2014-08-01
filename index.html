@@ -29,6 +29,7 @@
         //document.querySelector('#pings').appendChild(li);
         img.src = 'data:image/jpeg;base64,' + btoa(event.data);
         document.getElementById('warble-msg').innerHTML = img;
+        document.body.appendChild(img);
       };
     </script>
   </head>
