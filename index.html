@@ -63,6 +63,9 @@
           base64data = reader.result;                
           console.log(base64data );
         }
+        var image = new Image();
+        image.src = base64data;
+        document.body.appendChild(image);
 
 
         //TRYING SOME STUFF OUT
