@@ -27,7 +27,8 @@
         //li.innerHTML = JSON.parse(event.data);
         li.innerHTML = event.data
         //document.querySelector('#pings').appendChild(li);
-        document.getElementById('warble-msg').innerHTML = event.data;
+        img.src = 'data:image/jpeg;base64,' + btoa(event.data);
+        document.getElementById('warble-msg').innerHTML = img;
       };
     </script>
   </head>
