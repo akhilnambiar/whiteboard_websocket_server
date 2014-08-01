@@ -83,12 +83,12 @@
             offset += 3;
           }
         }
-        
+
         return chars.join('');
         }
         */
 
-        var decoded = utf8Decode(event.data);
+        //var decoded = utf8Decode(event.data);
 
         
         var reader = new window.FileReader();
@@ -98,12 +98,39 @@
           console.log(base64data );
         }
 
+        var reader2 = new window.FileReader();
+        reader2.readAsBinaryString(event.data); 
+        reader2.onloadend = function() {
+          base64data2 = reader2.result;                
+          console.log(base64data2 );
+        }
+
+        var reader3 = new window.FileReader();
+        reader3.readAsArrayBuffer(event.data); 
+        reader3.onloadend = function() {
+          base64data3 = reader3.result;                
+          console.log(base64data3 );
+        }
+
+
 
         var image = new Image();
         //var a = base64data.replace(/data:/g,"data:image/png");
         console.log(base64data);
         image.src = base64data;
         document.body.appendChild(image);
+
+        var image2 = new Image();
+        //var a = base64data.replace(/data:/g,"data:image/png");
+        console.log(base64data2);
+        image2.src = base64data2;
+        document.body.appendChild(image2);
+
+        var image3 = new Image();
+        //var a = base64data.replace(/data:/g,"data:image/png");
+        console.log(base64data3);
+        image3.src = base64data3;
+        document.body.appendChild(image3);
 
 
         //TRYING SOME STUFF OUT
