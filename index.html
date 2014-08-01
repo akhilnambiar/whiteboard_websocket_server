@@ -55,19 +55,15 @@
         //li.innerHTML = JSON.parse(event.data);
         li.innerHTML = event.data
         //document.querySelector('#pings').appendChild(li);
-
+        document.getElementById('warble-msg').innerHTML = event.data;
 
 
         //TRYING SOME STUFF OUT
-        var arrayBuffer = msg.data;
+        var arrayBuffer = event.data;
         var bytes = new Uint8Array(arrayBuffer);
-
         var image = document.getElementById('image');
         image.src = encode(bytes);
 
-
-
-        document.getElementById('warble-msg').innerHTML = event.data;
       };
     </script>
   </head>
