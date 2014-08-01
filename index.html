@@ -19,23 +19,15 @@
     </style>
 
     <script>
-    /*
-      function hexToBase64(str) {
-        return btoa(String.fromCharCode.apply(null, str.replace(/\r|\n/g, "").replace(/([\da-fA-F]{2}) ?/g, "0x$1 ").replace(/ +$/, "").split(" ")));
-      }
-    */
       var host = location.origin.replace(/^http/, 'ws')
       var ws = new WebSocket(host);
       ws.onmessage = function (event) {
-        console.log("WORKING");
-        console.log(event.data.type);
+        console.log("YEA");
         var li = document.createElement('li');
         //li.innerHTML = JSON.parse(event.data);
         li.innerHTML = event.data
         //document.querySelector('#pings').appendChild(li);
-        img.src = 'data:image/jpeg;base64,' + hexToBase64(event.data);
-        document.getElementById('warble-msg').innerHTML = img;
-        document.body.appendChild(img);
+        document.getElementById('warble-msg').innerHTML = event.data;
       };
     </script>
   </head>
